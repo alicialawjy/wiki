@@ -1,0 +1,52 @@
+{% load static %}
+
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <title>Wiki</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <link href="{% static 'encyclopedia/styles.css' %}" rel="stylesheet">
+        <link rel="apple-touch-icon" sizes="180x180" href="{% static 'encyclopedia/apple-touch-icon.png' %}">
+        <link rel="icon" type="image/png" sizes="32x32" href="{% static 'encyclopedia/favicon-32x32.png' %} ">
+        <link rel="icon" type="image/png" sizes="16x16" href="{% static 'encyclopedia/favicon-16x16.png' %} ">
+    </head>
+    <body>
+        <div class="row-updated">
+            <div class="sidebar">
+                <div class='sidebar-content'>
+                    <a href="{% url 'encyclopedia:index' %}">
+                        <img id='logo' src='https://upload.wikimedia.org/wikipedia/en/thumb/3/31/Puzzlesphere-ps-realign-letters-plus-bold-test.svg/523px-Puzzlesphere-ps-realign-letters-plus-bold-test.svg.png'>
+                    </a>
+                    <hr>
+                    <div id='sidebar-buttons'>
+                        <div>
+                            <a href="{% url 'encyclopedia:index' %}">Home</a>
+                        </div>
+                        <div>
+                            <a href="{% url 'encyclopedia:create' %}">Create New Page</a>
+                        </div>
+                        <div>
+                            <a href="{% url 'encyclopedia:random' %}">Random Page</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="main">
+                <div id='top'>
+                    <div class="nav" id='edit'>
+                        {% block nav %} {% endblock %}
+                    </div>
+                    <form action="{% url 'encyclopedia:results' %}" method='POST'>
+                        {% csrf_token %}
+                        <input id="search" type="text" name="search" placeholder="Search Encyclopedia">
+                    </form>
+                </div>
+                <div id = 'content'>
+                    {% block body %}
+                    {% endblock %}
+                </div>       
+            </div>
+        </div>
+    </body>
+</html>

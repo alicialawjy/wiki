@@ -1,0 +1,22 @@
+<!-- File is used to create new entries -->
+<!-- Variables used in this html: results (filters) -->
+
+{% extends "encyclopedia/layout.html" %}
+
+{% block body %}
+<h2 id='heading'>Create New Entry</h2>
+
+<form action="{% url 'encyclopedia:create' %}" method='post'>
+    {% csrf_token %}
+    <p id='error'>{{ Error_Message }}</p>
+    <b>Entry Title:</b> <br>
+    <input type="text" name="Title" placeholder="Type here..."> 
+    <br><br>
+    <b>Content:</b> <br>
+    <textarea name='Content' placeholder='Type here...'></textarea>
+    <br><br>
+    <input type="submit" value="Save">
+</form>
+
+{% endblock %}
+

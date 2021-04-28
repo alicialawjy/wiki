@@ -1,0 +1,95 @@
+/*/////////////////////////////////////////////////*/
+/*                  General styling                */
+/*/////////////////////////////////////////////////*/
+body {
+    background-color: white;
+    max-width: 100%;
+    overflow-x: hidden; /* Hide horizontal scrollbar */
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.row-updated{
+    display: grid;
+    grid-template-columns: 175px auto;
+}
+
+/*/////////////////////////////////////////////////*/
+/*                     Sidebar                     */
+/*/////////////////////////////////////////////////*/
+.sidebar {
+    background-color: #fafafa;
+    border-right: 1px solid rgb(109, 226, 255);
+    height: 100vh;
+}
+
+.sidebar-content {
+    margin: 0 auto;
+    font-size: 14px;
+}
+
+#sidebar-buttons{
+    margin-left: 30px;
+}
+
+#logo {
+    width: 125px;
+    display: block;
+    margin: 0 auto;
+}
+
+/*/////////////////////////////////////////////////*/
+/*                   Top Nav Bar                   */
+/*/////////////////////////////////////////////////*/
+#top {
+    display: flex;
+    border-bottom: 1px solid rgb(109, 226, 255);
+    box-shadow:  inset 0 -10px 40px #e7e6e6c0;
+    padding: 10px;
+    font-size: 14px;
+    height: 80px;
+}
+
+#edit {
+    margin: auto 20px 0px auto;
+}
+
+#search {
+    display: inline;
+    width: 400px;
+    text-align: left;
+    text-indent: 10px;
+    margin-top: 35px;
+}
+
+/*/////////////////////////////////////////////////*/
+/*            Entry View (urls.py: entry)          */
+/*/////////////////////////////////////////////////*/
+#heading {
+    margin-top: 15px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid black;
+}
+
+#subtext{
+    font-size: 14px;
+}
+
+#content {
+    padding: 20px;
+}
+
+code {
+    white-space: pre;
+}
+
+/*/////////////////////////////////////////////////*/
+/*        Create New Page (urls.py: create)        */
+/*/////////////////////////////////////////////////*/
+textarea {
+    height: 500px;
+    width: 100%;
+}
+
+#error{
+    color:red;
+}

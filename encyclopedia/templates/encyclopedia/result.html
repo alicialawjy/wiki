@@ -1,0 +1,18 @@
+<!-- Variables used in this html: results (filters) -->
+
+{% extends "encyclopedia/layout.html" %}
+
+{% block body %}
+
+<h2 id='heading'>Search Results</h2>
+
+<ul>
+    {% for r in results %} 
+        <li><a href="{% url 'encyclopedia:entry' r %}"> {{ r }} </a></li>
+    {% empty %}
+        Sorry, we don't have what you're looking for. 
+        <a href="{% url 'encyclopedia:index' %}">Return to home page?</a>
+    {% endfor %}
+</ul>
+
+{% endblock %}

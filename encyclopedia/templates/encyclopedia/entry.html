@@ -1,0 +1,16 @@
+
+{% extends "encyclopedia/layout.html" %}
+
+{% block nav %}  
+<a href="{% url 'encyclopedia:edit' title %}">
+    Edit Entry
+</a>
+{% endblock %}
+
+{% block body %}
+<h2 id='heading'>{{ title }}</h2>
+<p id='subtext'>From Wikipedia, the free encyclopedia</p>
+
+{{ content|safe }}
+
+{% endblock %}
