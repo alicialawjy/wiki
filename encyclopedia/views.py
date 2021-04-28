@@ -7,8 +7,6 @@ from random import randint
 from django import forms
 
 
-entrylist_normal = util.list_entries()
-entrylist_lower = [i.lower() for i in util.list_entries()]
 # View for home page
 def index(request):
     return render(request, "encyclopedia/index.html", {
@@ -19,11 +17,14 @@ def index(request):
 def entry(request, entry):
     # Check if entry exists, if it does:
     if util.entryexists(entry):
-        #Convert the content into html
+        # Convert the content into html
         html = util.convert(entry)
-        #Render the entry's html page
+        # Get entry title
+        all_entries = util.list_entries()
+        title = [e for e in all_entries if entry.lower()==e.lower()]
+        # Render the entry's html page
         return render(request, f"encyclopedia/entry.html",{
-            'title': entry,
+            'title': title[0],
             'content': html
             })
     
@@ -33,6 +34,8 @@ def entry(request, entry):
 
 # View for search results: 
 def results(request):
+    entrylist_normal = util.list_entries()
+    entrylist_lower = [i.lower() for i in entrylist_normal]
     # If this was a search query
     search_item = request.POST['search']
     # Check if an entry exists. If there's an EXACT match,
