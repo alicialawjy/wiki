@@ -1,6 +1,6 @@
-![Header](https://github.com/alicialawjy/commerce/blob/main/Screenshots/Entry.png)
+![Header](https://github.com/alicialawjy/wiki/blob/main/Screenshots/Entry.png)
 
-#Wiki
+# Wiki
 A Wikipedia-like online encyclopedia. Users are able to search for and view entries, create new entries and edit existing ones. This was my first project on the Harvard x EdX Course: CS50 Web Programming with Python and JavaScript.
 
 ## Project Setup
@@ -15,14 +15,13 @@ A Wikipedia-like online encyclopedia. Users are able to search for and view entr
 ## Functionality
 #### 1. Make a New Entry
 - Via 'Create New Page' in the sidebar
-- Content has to be written using Markdown. Util.py function 'convert' will then convert the Markdown content into HTML for rendering.
-- If an entry has already been created, the entry will be denied and an error message will show.
-- Else, when the entry is successfully created, users will be redirected to the entry page.
+- Content has to be written using Markdown. The 'convert' function in util.py will then convert the Markdown content into HTML for rendering.
+- If an entry has already been created, the submission will be denied and an error message will show.
+- Else, the entry is created and users will be redirected to the entry page.
 
 #### 2. View an Entry
 - Visit /wiki/TITLE, where TITLE is the title of an encyclopedia entry.
-- Alternatively, click on the links in the home page.
-- If an entry that doesn't exist is visited, users are presented with an eror page indicating that their requested page was not found.
+- If an entry that doesn't exist is visited, users are presented with an error page indicating that their requested page was not found.
 
 #### 3. Edit an Existing Entry
 - Via the 'Edit Entry' button next to the search bar, which is only visible when users are viewing an entry.
@@ -30,9 +29,9 @@ A Wikipedia-like online encyclopedia. Users are able to search for and view entr
 - Once the post is edited and saved, users are redirected back to the entry page where they can view their changes.
 
 #### 4. Search for Entries
-- Via the searchbar at the top of the webpage.
+- Via the search bar at the top of the webpage.
 - If the query matches the name of an encyclopedia entry, the user is redirected to that entry’s page.
-- Else, users will be directed to a search results page that displays a list of all encyclopedia entries that have the query as a substring. For example, if the search query were Py, then Python should appear in the search results.
+- Else, users will be directed to a search results page that displays a list of potential entries that have their query as a substring. For example, if the search query were 'Py', then Python should appear in the search results.
 
 #### 5. View a Random Page
 - Via the 'Random Page' button in the sidebar.

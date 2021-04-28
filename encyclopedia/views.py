@@ -9,8 +9,9 @@ from django import forms
 
 # View for home page
 def index(request):
+    all_entries = sorted(util.list_entries())
     return render(request, "encyclopedia/index.html", {
-        "entries": util.list_entries()
+        "entries": all_entries
     })
 
 # View for a particular entry
