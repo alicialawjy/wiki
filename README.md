@@ -1,4 +1,4 @@
-![Header](https://github.com/alicialawjy/commerce/blob/main/Screenshots/Entry.png)
+![Header](https://github.com/alicialawjy/wiki/blob/main/Screenshots/Entry.png)
 
 #Wiki
 A Wikipedia-like online encyclopedia. Users are able to search for and view entries, create new entries and edit existing ones. This was my first project on the Harvard x EdX Course: CS50 Web Programming with Python and JavaScript.
